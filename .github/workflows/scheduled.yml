@@ -1,0 +1,17 @@
+name: Scheduled Daily Run
+
+on:
+  schedule:
+    - cron: '0 19 * * *'  #Runs every day at 7pm
+  workflow_dispatch:     #Allows manual trigger
+
+jobs:
+  scheduled_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run a scheduled task
+      run: echo "Testing to see if this task ran on schedule at $(date -u)"
