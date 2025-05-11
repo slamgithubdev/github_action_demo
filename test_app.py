@@ -1,8 +1,7 @@
-#test
+#testing
 from app import greet_user
 
 def test_greet():
-    """Testing."""
     result = greet_user("Steven")
     assert result == "Hello, Steven!"
 
